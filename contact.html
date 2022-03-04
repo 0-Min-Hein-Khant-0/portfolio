@@ -1,7 +1,4 @@
-<?html
 
-require ('mysql.html');
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -228,24 +225,6 @@ require ('mysql.html');
 
 </section>
 
-<?html
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-	$name    = $_POST['name'];
-	$email   = $_POST['email'];
-	$subject = $_POST['subject'];
-	$message = $_POST['message'];
-
-	// echo $name;
-	// echo $email;
-	// echo $subject;
-	// echo $message;
-
-	$sql = "INSERT INTO users (name,email,subject,message) VALUES(?,?,?,?)";
-	$res = $pdo->prepare($sql);
-	$res->execute([$name, $email, $subject, $message]);
-	// header('Location:contact.html?create=success');
-}
-?>
 <!-- Template JS Files -->
 <script src="js/jquery-3.5.0.min.js"></script>
 <script src="js/styleswitcher.js"></script>
